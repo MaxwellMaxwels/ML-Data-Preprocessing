@@ -16,7 +16,7 @@ dataset$Purchased=factor(dataset$Purchased,
 #install.packages('caTools')
 library(caTools)
 set.seed(123)
-split=sample.dataset(dataset$Purchased, SplitRation=0.8)                      
+split=sample.split(dataset$Purchased, SplitRation=0.8)                      
 training_set=subset(dataset, split ==TRUE)
 test_set=subset(dataset, split ==FALSE)
 training_set[, 2:3]=scale(training_set[, 2:3])
